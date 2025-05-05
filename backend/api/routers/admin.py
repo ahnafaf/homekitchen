@@ -9,8 +9,7 @@ router = APIRouter(
 )
 
 def verify_admin(user):
-    role = user['role']
-    if role != "admin":
+    if user['role'] != "admin":
         raise HTTPException(status_code=403, detail="Admins only")
     return True
 
